@@ -1,0 +1,32 @@
+<input [(ngModel)]="stopName">
+<button class="btn btn-primary" (onclick)="getStop()">Search</button>
+
+<div *ngFor="let stop of stopArray">
+  <ul>
+    <li *ngFor="let route of stop.patterns">
+      <p>{{route.name}}</p>
+    </li>
+  </ul>
+</div>
+
+<p>
+  {{printThis}}
+</p>
+<!--ul>
+  <li *ngFor="let media of mediaArray">
+    <img [src]="mediaService.mediaURL + media.filename.split('.')[0]+'-tn320.png'">
+    <h4>{{media.title}}</h4>
+    <p>{{media.description}}</p>
+  </li>
+</ul-->
+
+<div class="card-deck">
+  <div class="card" *ngFor="let media of mediaArray">
+    <img class="card-img-top" [src]="mediaService.mediaURL + media.filename.split('.')[0]+'-tn320.png'" alt="media.title">
+    <div class="card-body">
+      <h5 class="card-title">{{media.title}}</h5>
+      <p class="card-text">{{media.description}}</p>
+    </div>
+  </div>
+</div>
+
